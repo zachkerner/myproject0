@@ -19,9 +19,12 @@ app.use(express.static(path.join(__dirname, '../client/build/index.html'),
                 if (err) {
                   res.status(500).send(err)
                 }
-              }));
+              }
+));
 
-// Serve index.html for any route to support React Router
+app.get('/static/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', req.path));
+});
 
 
 const port = process.env.PORT || 3000
