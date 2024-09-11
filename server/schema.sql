@@ -4,8 +4,6 @@ CREATE TABLE IF NOT EXISTS fields (
   page INT NOT NULL
 );
 
-GRANT ALL PRIVILEGES ON TABLE fields TO zach_kerner;
-
 INSERT INTO fields (field, page)
 VALUES
   ('birthday', 3),
@@ -22,5 +20,3 @@ CREATE TABLE IF NOT EXISTS user_data (
   birthday DATE
 );
 
-GRANT ALL PRIVILEGES ON TABLE user_data TO zach_kerner;
-GRANT USAGE, SELECT ON SEQUENCE user_data_id_seq TO zach_kerner;

@@ -29,7 +29,11 @@ const port = process.env.PORT || 3000
 const pool = new Pool({
   user: process.env.PGUSER,
   host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  },
+  database: process.env.DATABASE_URL,
   password: process.env.PGPASSWORD,
   port: process.env.PGPORT
 })
