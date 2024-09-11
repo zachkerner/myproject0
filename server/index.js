@@ -14,7 +14,12 @@ app.use(express.json())
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../client/build/index.html'), 
+              function(err) {
+                if (err) {
+                  res.status(500).send(err)
+                }
+              }));
 
 // Serve index.html for any route to support React Router
 
