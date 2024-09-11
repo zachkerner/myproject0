@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { validateEmail, validatePassword, getPage } from './utils/utils.js'
+const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com/"
 
 function FormEmailPassword({ page, setContinueDisabled, setUserEmail, userData, setUserData }) {
   const FIRST_PAGE = 1
@@ -71,7 +72,7 @@ function FormEmailPassword({ page, setContinueDisabled, setUserEmail, userData, 
     const responseBody = { email: formState.email, password: formState.password }
 
     try {
-      const response = await fetch(`http://localhost:3000/${endpoint}`, {
+      const response = await fetch(`${apiURL}/${endpoint}`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(responseBody)
@@ -252,7 +253,7 @@ function FormFields({ page, addressPage, aboutMePage, birthdayPage, userEmail, u
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = fetch(`http://localhost:3000/api/updateUser/${userEmail}`, {
+      const response = fetch(`${apiURL}/api/updateUser/${userEmail}`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ aboutMe: aboutMeLocalText, address: addressLocalText, birthday: birthdayLocalData })
