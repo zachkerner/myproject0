@@ -9,6 +9,9 @@ import 'dotenv/config'
 
 const app = express()
 app.use(cors())
+app.use(cors({
+  origin: ['https://myproject0-cfcb6ea32979.herokuapp.com/']
+}));
 app.use(express.json())
 
 const __filename = fileURLToPath(import.meta.url);

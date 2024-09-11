@@ -37,11 +37,13 @@ function getPage (fieldName, data) {
 };
 
 function validateEmail (email) {
+  if (!email) return false
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(String(email).toLowerCase());
 };
 
 function validatePassword (password) {
+  if (!password) return false
   const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
   return re.test(password)
 }
