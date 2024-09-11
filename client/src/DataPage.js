@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
+const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com/"
 
 function Table({ data }) {
   return (
@@ -35,7 +36,7 @@ export default function DataPage() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/userData")
+    fetch(`${apiURL}api/userData`)
     .then(res => res.json())
     .then(data => setData(data))
   }, [])

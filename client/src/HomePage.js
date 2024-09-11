@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { validateEmail, validatePassword, getPage } from './utils/utils.js'
-const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com/"
+const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com"
 
 function FormEmailPassword({ page, setContinueDisabled, setUserEmail, userData, setUserData }) {
   const FIRST_PAGE = 1

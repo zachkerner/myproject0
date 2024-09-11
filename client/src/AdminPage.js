@@ -54,7 +54,7 @@ function Form({ data }) {
   const mutation = useMutation({
     mutationFn: (arr) => {
 
-      fetch("http://localhost:3000/api/updateFields", {
+      fetch(`${apiURL}api/updateFields`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ fieldsToUpdate: arr})
