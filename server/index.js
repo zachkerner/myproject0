@@ -6,6 +6,7 @@ import bcrypt from 'bcrypt'
 const { Pool } = pkg
 import cors from 'cors'
 import 'dotenv/config'
+dotenv.config()
 import helmet from 'helmet'
 
 const app = express()
