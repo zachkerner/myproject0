@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
-const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com/"
+const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com"
 
 function Table({ data }) {
   return (
