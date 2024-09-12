@@ -3,7 +3,9 @@ import { useQuery } from '@tanstack/react-query'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './HomePage.js'
 import AdminPage from './AdminPage.js'
-const apiURL = "https://myproject0-cfcb6ea32979.herokuapp.com"
+const apiURL = process.env.NODE_ENV === 'production'
+? 'https://myproject0-cfcb6ea32979.herokuapp.com/api'
+: 'http://localhost:3000/api';
 
 export default function Parent() {
   const { isLoading, error, data } = useQuery({

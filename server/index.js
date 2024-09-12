@@ -12,8 +12,9 @@ const app = express()
 app.use(cors({
   origin: ['https://myproject0-cfcb6ea32979.herokuapp.com']
 }));
-app.use(express.json())
 app.use(helmet());
+app.use(express.json())
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
