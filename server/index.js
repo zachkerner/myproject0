@@ -9,9 +9,8 @@ import 'dotenv/config'
 import helmet from 'helmet'
 
 const app = express()
-app.use(cors())
 app.use(cors({
-  origin: ['https://myproject0-cfcb6ea32979.herokuapp.com/']
+  origin: ['https://myproject0-cfcb6ea32979.herokuapp.com']
 }));
 app.use(express.json())
 app.use(helmet());
